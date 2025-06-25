@@ -2,7 +2,9 @@
 <api context="/api" name="api" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET POST" uri-template="/">
         <inSequence>
-            <respond/>
+            <log category="INFO"   logMessageID="false" logFullPayload="false" >
+    <message>${payload}</message>
+</log><respond/>
         </inSequence>
         <faultSequence>
         </faultSequence>
